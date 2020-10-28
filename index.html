@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
+    <i class="fas fa-bars burger-button" id="burger-menu"></i>
     <header class="header">
         <div class="container">
             <figure class="logo">
@@ -31,34 +32,35 @@
         </div>
     </header><!--fin de header -->
 
-    <section class="hero">
+    <section class="hero"> 
         <div class="container">
             <h1>
                 Hola! Soy <strong>María Belén Cerón</strong><br/> Desarrolladora <strong>WEB</strong><br/> Amante de la <strong>tecnología</strong>
             </h1>
             <img class="hero-image" src="images/hero.jpg" width="500px" height="300px" alt="Imagen principal del sitio">
         </div>
-    </section><!--fin de hero -->
+    </section>
 
     <section id="portafolio" class="portfolio">
         <div class="container">
             <h2>Portafolio (proyectos destacados)</h2>
             <article class="project">
                 <div class="project-details">
-                    <h3 class="project-title">Bienes Raices</h3>
+                    <h3 class="project-title">Bienes Raíces</h3>
                     <h4 class="project-course">HTML & CSS</h4>
                     <p class="project-date"><strong>Fecha:</strong> 12/04/2020</p>
                     <p class="project-url"><strong>Puedes verlo en:</strong> <a href="https://kind-torvalds-4bf715.netlify.app">https://kind-torvalds-4bf715.netlify.app</a></p>
                     <p class="project-description">Esta es mi primera pagina web, desarrollada con la ayuda de un curso en Udemy, en esta se utiliza principalmente HTML y CSS</p>
                 </div>
                 <figure class="project-imageContainer">
-                    <img class="project-image" src="images/bienesRaices.PNG" alt="Imagen del proyecto de Bienes Raices de Udemy" width="500px">
+                    <!-- <iframe src="https://kind-torvalds-4bf715.netlify.app" width="500" height="300" frameborder="0"></iframe> -->
+                    <img class="project-image" src="images/bienesRaices.PNG" alt="Imagen del proyecto de Bienes Raíces de Udemy" width="500">
                 </figure>
             </article>
         </div>
-    </section><!--portfolio-->
+    </section>
 
-    <div class="container">
+    <div class="container"> 
         <h2 class="experience-list-title">Mas sobre mi experiencia</h2>
     </div>
     <section id="experiencia" class="experience-list">
@@ -101,7 +103,6 @@
             </div>
         </div>
     </section>
-    
 
     <footer class="footer">
         <div class="container">
@@ -110,10 +111,12 @@
             </div>
             <div>
                 <p>
-                    Designed by Maria Belen Ceron
+                    Designed by Maria Belén Cerón
                 </p>
             </div>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

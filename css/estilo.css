@@ -36,7 +36,9 @@ h2{
 }
 
 .container{
-    width: 1000px;
+    max-width: 1000px;
+    /* width: 100%; */
+    flex: 1;
     margin: 0 auto;
     display: inherit;
     justify-content: inherit;
@@ -46,6 +48,20 @@ h2{
 }
 
 /* MENU */
+.burger-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.8);
+    line-height: 40px !important;
+    text-align: center;
+    position: fixed;
+    z-index: 4;
+    left: 5px;
+    top: 5px;
+    color: white;
+    display: none;
+}
 .header {
     background-color: var(--color-menu);
     color: white;
@@ -56,6 +72,7 @@ h2{
     position: sticky;
     top: 0;
     z-index: 1001;
+    flex-wrap: wrap;
 }
 
 ol,
@@ -100,6 +117,7 @@ h1 {
     letter-spacing: -.2px;
     color: white;
     margin: 0;
+    text-shadow: 1px 2px 2px #000;
 }
 
 h1 strong{
@@ -112,14 +130,11 @@ figure {
 
 .hero {
     height: 300px;
-    /* background-image: url('../images/hero.jpg'); */
     background-color: var(--color-menu);
-    /* background-size: 400px 300px;
-    background-repeat: no-repeat;
-    background-position-x: right; */
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .hero-image {
     object-fit: cover;
@@ -141,6 +156,7 @@ figure {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .project-title {
@@ -165,7 +181,11 @@ figure {
 
 .project-details,
 .project-imageContainer {
-    width: 500px;
+    width: 50%;
+}
+
+.project-imageContainer img {
+    max-width: 100%;
 }
 
 /* EXPERIENCIA */
@@ -178,8 +198,8 @@ figure {
     margin-bottom: 20px;
 }
 .experience {
-    margin: 10px;
-    width: 480px;
+    margin: 1%;
+    width: 48%;
     flex-shrink: 0;
     border-radius: 10px;
     overflow: hidden;
@@ -241,6 +261,7 @@ figure {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .social-link {
@@ -269,8 +290,195 @@ figure {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer img {
     vertical-align: middle;
+}
+
+@media screen and (max-width: 1023px) {
+    .experience-list-title {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .container {
+        padding: 0 1em;
+    }
+
+    .hero {
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        padding: 2em;
+    }
+    .hero-image {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        object-position: center 25%; 
+    }
+    h1{
+        font-size: 2em;
+        z-index: 2;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    h2 {
+        font-size: 1.3em;
+        margin: .5em 0;
+    }
+
+    .burger-button {
+        display: block;
+    }
+
+    .header {
+        display: block;
+        height: auto;
+        position: static;
+    }
+    .header ol {
+        display: block;
+    }
+    .header ol li {
+        height: 50px;
+    }
+    .header a {
+        justify-content: left;
+        height: 40px;
+        font-size: 2em;
+        margin-bottom: .5em;
+        border-left: 5px solid #0f3057;
+    }
+    .header .logo {
+        text-align: center;
+    }
+    .work-together {
+        border: none;
+        padding: 0;
+    }
+
+    .menu {
+        position: fixed;
+        background-color: rgba(0, 136, 145, .9);
+        z-index: 3;
+        top: 0;
+        left: -100vw;
+        width: 100vw;
+        /* height: 100vh; */
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+    }
+    .menu.is-active {
+        left: 0;
+    }
+
+    .project-course,
+    .project-date,
+    .project-url {
+        margin: .3em 0;
+    }
+    .project {
+        display: block;
+    }
+    .project-imageContainer {
+        width: auto;
+        text-align: center;
+    }
+    .project-details {
+        width: auto;
+        font-size: 16px;
+    }
+    .project-title {
+        font-size: 1.5em;
+        margin-bottom: .3em;
+    }
+    .project-course {
+        font-size: .7em;
+    }
+    .project-date {
+        font-size: .8em;
+    }
+    .project-url {
+        font-size: .8em;
+    }   
+    .project-description {
+        font-size: 1em;
+    }
+
+    .experience {
+        width: auto;
+        flex-shrink: initial;
+    }
+    .experience img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header .logo img {
+        height: 50px;
+        width: 70px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+    .project-details {
+        font-size: 16px;
+    }
+    .portfolio {
+        padding: 0;
+    }
+
+    .experience-detail {
+        margin: -2em .5em .5em;
+        padding: 1em;
+    }
+
+    .contact {
+        height: auto;
+        padding: 1em 0;
+        text-align: center;
+        display: block;
+    }
+    .form-email button {
+        margin: 1em auto;
+    }
+    .form-email h3 {
+        margin-top: 0;
+    }
+    .footer {
+        display: block;
+        text-align: center;
+        border: 1px solid transparent;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        background-size: 100%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    h1 {
+        font-size: 1.4em;
+    }
+    .hero {
+        padding: 2em 1em;
+    }
+    .hero-image {
+        filter: opacity(80%) blur(1px);
+    }
 }
